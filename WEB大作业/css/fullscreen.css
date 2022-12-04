@@ -1,0 +1,89 @@
+
+.container{
+    /* 相对定位 */
+    position: relative;
+    /* 背景颜色· */
+   
+}
+.menu a
+{
+    color: black;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.slide-1{
+    background: url(https://w.wallhaven.cc/full/2y/wallhaven-2yeydm.png);
+}
+.slide-2{
+    background: url(https://w.wallhaven.cc/full/x6/wallhaven-x619o3.jpg);
+}
+.slide-3{
+    background: url(https://w.wallhaven.cc/full/zy/wallhaven-zyxvqy.jpg);
+}
+
+.slide{
+    width: 100%;
+    height: 100vh;
+    /* 图像铺满整个背景区域, */
+    background-size: cover;
+    /* 相对定位 */
+    position: relative;
+    overflow-x: hidden ;
+}
+
+.caption{
+    background:rgba(0, 0, 0, 0.03) ;
+    width: 100%;
+    /* 绝对定位 */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 40px 0px;
+}
+
+.container h3{
+    color: #EB6440;
+    text-align: center;
+    font-size: 50px;
+    padding: 18px;
+}
+
+.container p{
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+.arrow {
+    /* 绝对定位 */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    /* transform: background 500ms; */
+}
+
+.arrow img{
+    width: 50px;
+}
+
+.arrow:hover{
+    background:rgba(0, 0, 0, 0.4) ;
+}
+
+.l{
+    left: 0;
+}
+.r{
+    right: 0;
+}

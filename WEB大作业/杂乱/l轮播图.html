@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>ddd</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./lun.css">
+    <style>
+      .red
+      {
+        color: red;
+      }
+      body
+ {
+background-image: url(https://w.wallhaven.cc/full/6o/wallhaven-6ozkzl.jpg);
+  background-size: cover;
+        }
+        .imglist
+        {
+          display: flex;
+         align-items: flex-start;
+        }
+        img
+        {
+          width: 300px;
+          height: 300px; 
+        }
+        .window
+        {
+          overflow: hidden;
+          width: 300px;
+          height: 300px;
+        }
+        .prev>img{
+          width: 100px;
+          height: 100px;
+          margin-left: 500px;
+        }
+        .next>img
+        {
+          height: 100px;
+          width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+    <nav>
+      <ul class='menu'>
+        <li class="id" style="float:left">
+        <a href="#">N1connyS</a></li>
+        <li><a href='#'>首页</a>
+          <ul class='submenu'>
+            <li><a href='#'>Subme</a></li>
+            <li><a href='#'>Subme</a></li>
+            <li><a href='#'>Subme</a></li>
+            <li><a href='#'>Subme</a></li>
+          </ul>
+        </li>
+        <li><a href="#">
+          个人作品
+        </a></li>
+        <li class='active'><a href='#'>我的书单</a>
+          <ul class='submenu'>
+            <li><a href='https://m.ituring.com.cn/book/1556l'>head first 系列</a></li>
+            <li><a href='https://m.ituring.com.cn/book/2472'>js红宝书</a></li>
+            <li><a href='https://m.ituring.com.cn/book/685'>算法</a></li>
+            <li><a href='https://www.bookstack.cn/read/javascript-tutorial/README.md'>阮一峰JS</a></li>
+           
+          </ul>
+        </li>
+        <li><a href='#'>关注我们</a>
+          <ul class='submenu'>
+            <li><a href='https://space.bilibili.com/179309941?spm_id_from=..0.0'>我的B站</a></li>
+            <li><a href='https://github.com/N1connys?tab=repositories'>我的GITHUB</a></li>
+            <li><a href='https://juejin.cn/user/3109848400542087/posts'>掘金链接</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    </div>   
+    <main>
+      <div class="window">
+        <div class="imglist"id="imglist">
+          <img src="https://s.uiinitiative.com/items/shaders-slider/screenshots/1.jpg" alt="">
+          <img src="https://s.uiinitiative.com/items/shaders-slider/screenshots/7.jpg" alt="">
+          <img src="https://s.uiinitiative.com/items/shaders-slider/screenshots/3.jpg" alt="">
+        </div>
+      </div>
+      <span id="buttons">
+        <span>第一张</span>
+        <span>第二张</span>
+        <span>第三张</span>
+      </span>
+    </main>
+    <div class="window">
+      <div class="imglist" id="imglist">
+        <img src="FF7VwzYaIAE-mOw.jpg" alt="">
+        <img src="FFUWGmyaMAAWS8d.jpg" alt="">
+        <img src="https://s.uiinitiative.com/items/shaders-slider/screenshots/3.jpg" alt="">
+      </div>
+    </div>
+    <span id="buttons">
+      <span>第一张</span>
+      <span>第二张</span>
+      <span>第三张</span>
+    </span>
+    <div class="arrow">
+      <div class="prev">
+      <img src="向左箭头.svg" alt="">
+      </div>
+      <div class="next">
+        <img src="箭头.svg" alt="">
+      </div>
+    </div>
+    <script>
+      var prev=document.querySelector('prev')
+      var next=document.querySelector('next')
+      var index0
+            var allbutton=$('#buttons>span')
+      for (let i = 0; i < allbutton.length; i++) {
+        $(allbutton[i]).on('click',function(x)
+        {
+          // 判断点击的目标在其中排第几节，爸爸的第几个儿子
+         var index=$(x.currentTarget).index();
+        //  console.log(index)
+         var x=index*(-300)
+        //  console.log(n)
+       
+         $('#imglist').css("marginLeft",x);
+      
+        var n=index
+        allbutton.eq(n)
+        .addClass('red')
+        .siblings('.red').removeClass('red') 
+      }) 
+      }
+      var n=0
+      var num=allbutton.length
+      allbutton.eq(n%num).trigger('click')
+      var timer=setInterval(() => {
+        n=n+1
+        allbutton.eq(n%num).trigger('click')
+        .addClass('red')
+        .siblings('.red').removeClass('red')        
+      }, 1000);
+      $('.window').on('mouseenter',function()
+      {
+        window.clearInterval(timer)
+      })
+      $('.window').on('mouseleave',function()
+      {
+        timer=setInterval(() => {
+        n=n+1
+        allbutton.eq(n%num).trigger('click')
+        .addClass('red')
+        .siblings('.red').removeClass('red')        
+      }, 1000);
+      })
+      
+      prev.addEventListener('click',function()
+      { 
+        for (let i = 0; i < allbutton.length; i++) {
+        var index=$(x.currentTarget).index();
+        console.log(index)
+      }
+    })
+      next.addEventListener('click',function()
+      { 
+        add()
+         $('#imglist').css("marginLeft",index*(-300));
+         window.clearInterval(timer)
+         timer();
+      })
+    </script>
+    </body>
+</html>

@@ -1,0 +1,246 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>web课程设计个人博客</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+      .head
+
+{
+    position: relative;
+    height: 100vh;
+  background-image: url(https://w.wallhaven.cc/full/6o/wallhaven-6ozkzl.jpg);
+background-position: center center;
+background-size: cover;}
+     @font-face {
+        font-family:'sad';
+        src: url('包图小白体.ttf');
+      }
+      #container
+      {
+        font-family: 'sad';
+      }
+      @font-face {
+        font-family: 'happy';
+        src: url('视觉坊免费素材shijuef.com(龚帆免费体).ttf');
+      }
+      
+        .carousel {
+            width: 1000px;
+            height: 500px;
+            margin-left: 200px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            
+        }
+        .head1
+        {
+            position: absolute;
+            margin-top: 100px;
+        }
+        .carousel .container {
+            width: 100%;
+            height: 100%;
+            left: 0;
+            position: relative;
+            display: flex;
+            transition: all 1s;
+        }
+    
+       
+            .carousel .container  img {
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+            flex-shrink: 0;
+        }
+    
+        .carousel .shift .btn {
+            /* 绝对定位且垂直居中 */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+    
+            background-color: teal;
+            color: white;
+    
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+    
+            font-size: 40px;
+            font-weight: bold;
+    
+            /* 字符水平垂直居中 */
+            line-height: 50px;
+            text-align: center;
+    
+            cursor: pointer;
+    
+            user-select: none;
+    
+            /* 不透明度 0.5 */
+            opacity: 0.5;
+        }
+        .carousel .shift .left {
+            left: 20px;
+        }
+        .carousel .shift .right {
+            right: 20px;
+        }
+    
+        .carousel .bottom {
+            position: absolute;
+    
+            bottom: 20px;
+    
+            /* 绝对定位水平居中 */
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+    
+            width: max-content;
+    
+            display: flex;
+            /* 指示器间距 */
+            gap: 10px;
+        }
+    
+        .carousel .bottom .indicator {
+            height: 5px;
+            width: 40px;
+    
+            background-color: teal;
+    
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    
+        .carousel:hover .bottom .indicator {
+            opacity: 1;
+        }
+        .carousel:hover .shift .btn {
+            opacity: 1
+        }
+    </style>
+  </style>
+</head>
+<body>
+  <div class="head">
+    <nav>
+      <ul class='menu'>
+        <li class="id" style="float:left">
+        <a href='index.html'>N1connyS的首页</a></li>
+        <li><a href='#'>小小作品（游戏/视频）</a>
+          <ul class='submenu'>
+            <li><a href='30js.html'>打地鼠游戏</a></li>
+            <li><a href='lun.html'>简易轮播图</a></li>
+            <li><a href="">CSGO，rush</a></li>
+          </ul>
+        </li>
+        <li><a href="ss.html">
+          发邮件~
+        </a></li>
+        <li class='active'><a href='#'>我的书单</a>
+          <ul class='submenu'>
+            <li><a href='https://m.ituring.com.cn/book/1556l'>head first 系列</a></li>
+            <li><a href='https://m.ituring.com.cn/book/2472'>js红宝书</a></li>
+            <li><a href='https://m.ituring.com.cn/book/685'>算法</a></li>
+            <li><a href='https://www.bookstack.cn/read/javascript-tutorial/README.md'>阮一峰JS</a></li>
+           
+          </ul>
+        </li>
+        <li><a href='#'>关注我们</a>
+          <ul class='submenu'>
+            <li><a href='https://space.bilibili.com/179309941?spm_id_from=..0.0'>我的B站</a></li>
+            <li><a href='https://github.com/N1connys?tab=repositories'>我的GITHUB</a></li>
+            <li><a href='https://juejin.cn/user/3109848400542087/posts'>掘金链接</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+    </nav>
+  <div class="head1">
+  <div class="carousel">
+    <div class="container">
+        <img src="https://w.wallhaven.cc/full/k7/wallhaven-k7v9yq.png" alt="">
+        <img src="https://w.wallhaven.cc/full/v9/wallhaven-v9v3r5.jpg" alt="">
+        <img src="FF7VwzYaIAE-mOw.jpg" alt="">
+    </div>
+    <div class="shift">
+        <div class="btn left" onclick="leftShift()">&lt;</div>
+        <div class="btn right" onclick="rightShift()">&gt;</div>
+    </div>
+    <div class="bottom"></div>
+</div>
+</div>
+</div>
+<script>
+
+    let index=0;
+    refresh()
+    function refresh()
+    {
+        if(index>2)
+        {
+            index=0
+        }
+        else if(index<0)
+        {
+            index=2
+        }
+        let carousel=document.querySelector('.carousel')
+         let width=getComputedStyle(carousel).width
+         width=Number(width.slice(0,-2))
+         carousel.querySelector('.container').style.left=index*-1*width+'px';
+    }
+
+
+    function leftShift()
+    {
+        index--
+        refresh()
+    }
+    function rightShift()
+    {
+        index++
+        refresh()
+    }
+    function autoplay(){
+ setInterval(() => {
+    index++
+        refresh()
+        clearInterval(autoplay)
+        autoplay=createauto;
+    }, 3000);
+    }
+   
+    let createauto=autoplay() 
+    let imgcounts=document.querySelectorAll(".carousel .container img").length
+    const bottom=document.querySelector('.bottom')
+    for (let i = 0; i < imgcounts; i++) {
+       
+       { 
+        const indicator=document.createElement('div')
+        indicator.classList.add('indicator')
+           indicator.onclick = () => setindex(i)
+           bottom.append(indicator)
+       }
+       function setindex(idx)
+       {
+        index=idx
+        refresh()
+       } 
+       
+    }
+    </script>
+ 
+        
+    </body>
+    </html>

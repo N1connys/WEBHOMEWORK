@@ -1,0 +1,133 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background-image:url(../img/wallhaven-j855kw.png);
+  background-size: cover; 
+
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Amatic SC', cursive;
+}
+
+h1 {
+  color: #CE7777;
+  text-align: center;
+  font-size: 10rem;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.score {
+  background: rgba(255,255,255,0.2);
+  padding: 0 3rem;
+  line-height: 1;
+  border-radius: 1rem;
+}
+
+.game {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.hole:after {
+  display: block;
+  background: url(../game/山景.svg) bottom center no-repeat;
+  background-size: contain;
+  content: '';
+  width: 100%;
+  height:80px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+.mole {
+  background: url(../game/狗头-长草.svg) bottom center no-repeat;
+  background-size: 80%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition:all 0.5s;
+  cursor: crosshair;
+}
+
+.hole.up .mole {
+  top: 0px;
+}
+button
+{
+  padding: 0;
+  width: 150px;
+  height: 50px;
+  background: #3D5656;
+  position: absolute;
+  border-radius: 20px;
+  margin-left: 100px;
+  color:#68B984;
+  top:200px;
+  font-size: 22px;
+  cursor:cell;
+  opacity: 0.4;
+  transition: 1s;
+}
+button:hover
+{
+
+  opacity: 1;  
+}
+/* function rahole(holes)
+  {
+    const idx=Math.floor(Math.random() *holes.length );
+    const hole=holes[idx]
+    if(hole===previoushole)
+    {
+      console.log('与前一个相同，重新去生成一个洞')
+      return rahole(holes)
+    }
+    lasthole=hole
+    return hole
+  }
+  function peep()
+  {
+    const time=ratime(1000,2000)
+    const hole=rahole(holes)
+    hole.classList.add('up')
+    setTimeout(() => {
+      hole.classList.remove('up')
+      if(!timeUp)
+      peep()
+    }, time);
+  }
+  function startGame()
+  {
+    scoreBoard.textContent=0
+    timeUp=false
+    score=0
+    peep()
+    setTimeout(() => timeUp=true,15000);
+  }
+  function heat(e)
+  {
+    if(!e.isTrusted)
+    // 防止作弊
+    return
+    score++;
+    this.parentNode.classList.remove('up')
+    scoreBoard.textContent=score
+  }
+
+  moles.forEach(mole=>mole.addEventListener('click',heat)) */

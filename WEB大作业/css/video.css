@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'simple';
+    src: url('../通用文件/好字体1.ttf');
+   }
+          .talk
+  
+          {
+              margin-left: 10px;
+              position: absolute;
+              margin-top: 300px;
+          }
+       .head
+  {
+      position: relative;
+      height: 100vh;
+    background-image: url(../img/name.jpg);
+  background-position: center center;
+  background-size: cover;}
+  video
+  {
+     margin-top: 70px;
+      position: absolute;
+      margin-left: 200px;
+  }
+  p{
+      font-family: 'simple';
+      font-size:  25px;
+      font-weight: bold;
+      color: rgb(6, 7, 20);
+  }

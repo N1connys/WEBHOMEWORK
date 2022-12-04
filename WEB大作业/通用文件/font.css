@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'simple';
+  src: url('../通用文件/好字体1.ttf');
+ }
+     @font-face {
+        font-family:'sad';
+        src: url('../通用文件/包图小白体.ttf');
+      }
+      h2
+      {
+        color: #AC7104;
+        font-family: 'simple';
+      }
+      #container
+      {
+        font-family: 'sad';
+      }
+      @font-face {
+        font-family: 'happy';
+        src: url('../通用文件/视觉坊免费素材shijuef.com\(龚帆免费体\).ttf');}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../css/zhuce.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+  
+</head>
+<body>
+       
+          <audio 
+          autoplay="autoplay" 
+          loop="loop" 
+          preload="auto"
+          src="../music/约会.mp3">
+          </audio>
+         <div class="head">
+       
+         <div class="topnav">
+           <ul class='menu menu1'>
+             <li class="id" style="float:left">
+             <a href="../首页/index.html">N1connyS</a></li>
+             <li><a href='#'>小小作品（游戏/视频）</a>
+               <ul class='submenu'>
+                 
+                 <li><a href="../game/30js.html">打地鼠游戏</a></li>
+                 <li><a href="../轮播图/fullscreen.html">全屏轮播图</a></li>
+                 <li><a href="../视频/video.html">你的名字剪辑</a></li>
+               </ul>
+             </li>
+             <li><a href="../注册/注册.html">
+               发邮件~
+             </a></li>
+             <li class='active'><a href='#'>我的书单</a>
+               <ul class='submenu'>
+                 <li><a href='https://m.ituring.com.cn/book/1556l'>head first 系列</a></li>
+                 <li><a href='https://m.ituring.com.cn/book/2472'>js红宝书</a></li>
+                 <li><a href='https://m.ituring.com.cn/book/685'>算法</a></li>
+                 <li><a href='https://www.bookstack.cn/read/javascript-tutorial/README.md'>阮一峰JS</a></li>
+                
+               </ul>
+             </li>
+             <li><a href='#'>关注我们</a>
+               <ul class='submenu'>
+                 <li><a href='https://space.bilibili.com/179309941?spm_id_from=..0.0'>我的B站</a></li>
+                 <li><a href='https://github.com/N1connys?tab=repositories'>我的GITHUB</a></li>
+                 <li><a href='https://juejin.cn/user/3109848400542087/posts'>掘金链接</a></li>
+               </ul>
+             </li>
+           </ul>
+         
+    <di class="maxbox">
+        <div class="box1">
+            <p class="box2">登陆
+            </p>
+            <div class="inputs">
+                <input type="text"  class="input" placeholder="账号">
+                <input type="password" class="input" placeholder="密码">
+                <div class="go">GO</div>
+            </div>
+        </div>                  
+    </di>
+</div>
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script src="../通用文件/live2d.js"></script>
+<script src="../js/zhuce.js">
+   
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+     let index = 0
+
+    // 图片的数量
+    let imageCount = document.querySelectorAll(
+        ".carousel .container img"
+    ).length
+
+    const bottom = document.querySelector(".carousel .bottom")
+    for (let i = 0; i < imageCount; i++) {
+        // DOM 操作
+        // 知识点：https://3yya.com/courseware/chapter/162
+
+        // 创建底部按钮
+        const indicator = document.createElement("div")
+        indicator.classList.add("indicator")
+        indicator.onclick = () => setIndex(i)
+
+        bottom.append(indicator)
+    }
+
+    function createAuto() {
+        return setInterval(() => {
+            index++
+            refresh()
+        }, 3000)
+    }
+
+    // 自动滚动
+    let autoTimer = createAuto()
+
+    function refresh() {
+        if (index < 0) {
+            // 下标小于 0 时
+            // 设置最右的图片
+            index = imageCount - 1
+        } else if (index >= imageCount) {
+            // 下标超过上限时
+            // 设置最左的图片
+            index = 0
+        }
+
+        // 获取轮播框元素
+        let carousel = document.querySelector(".carousel")
+
+        //获取轮播框的宽度
+        let width = getComputedStyle(carousel).width
+        width = Number(width.slice(0, -2))
+
+        carousel.querySelector(".container").style.left =
+            index * width * -1 + "px"
+    }
+
+    let refreshWrapper = (func) => {
+        // refresh 装饰器
+        return function (...args) {
+            let result = func(...args)
+            refresh()
+
+            // 重置自动滚动
+            clearInterval(autoTimer)
+            autoTimer = createAuto()
+            return result
+        }
+    }
+
+    let leftShift = refreshWrapper(() => {
+        index--
+    })
+    let rightShift = refreshWrapper(() => {
+        index++
+    })
+
+    let setIndex = refreshWrapper((idx) => {
+        index = idx
+    })
+ -->
